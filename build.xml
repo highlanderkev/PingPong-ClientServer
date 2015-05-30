@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="pingpong" default="all">
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/client.jar" basedir="build/classes/pingpong/client">
+            <manifest>
+                <attribute name="Main-Class" value="Main"/>
+            </manifest>
+        </jar>
+        <jar destfile="build/jar/server.jar" basedir="build/classes/pingpong/server">
+            <manifest>
+                <attribute name="Main-Class" value="Main"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run-server">
+        <java jar="build/jar/server.jar" fork="true"/>
+    </target>
+
+    <target name="run-client">
+        <java jar="build/jar/client.jar" fork="true"/>
+    </target>
+
+</project>
