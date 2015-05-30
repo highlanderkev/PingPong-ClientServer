@@ -1,7 +1,12 @@
-INSTRUCTIONS for PingPong Client/Server
+# INSTRUCTIONS for PingPong Client/Server
 By Kevin Westropp
+
 There is an ant build file for building the server and client classes.
-$ ant compile
+
+> $ ant compile
+
 For jars:
-$ ant jar
+
+> $ ant jar
+
 Then run server and client in different processes.
